@@ -2,13 +2,13 @@
 /****************************************************************************\
 Plugin Name: F2 Tag Cloud Widget
 Plugin URI: http://www.fsquared.co.uk/software/f2-tagcloud/
-Version: 0.3.1
+Version: 0.3.2
 Author: fsquared limited
 Author URI: http://www.fsquared.co.uk
 Licence: GPL2
 Description: Tag cloud widget which exposes more of the internal Wordpress tagcloud options.
 
-Copyright(c)2012 fsquared limited. http://www.fsquared.co.uk
+Copyright(c)2012-2022 fsquared limited. http://www.fsquared.co.uk
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -354,5 +354,5 @@ class F2_Tag_Cloud_Widget extends WP_Widget {
 }
 
 /* Last step, add this widget into the init action. */
-add_action( 'widgets_init', create_function( '', 'register_widget( "F2_Tag_Cloud_Widget" );' ) );
+add_action( 'widgets_init', function() { register_widget( "F2_Tag_Cloud_Widget" ); } );
 ?>
